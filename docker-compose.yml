@@ -1,0 +1,15 @@
+version: '3'
+services:
+  igni-php:
+    working_dir: /app
+    build:
+      context: ./scripts
+    env_file:
+      - .env
+    volumes:
+      - ".:/app"
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    command: /app/scripts/run.sh
